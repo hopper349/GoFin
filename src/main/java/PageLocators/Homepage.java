@@ -19,10 +19,18 @@ public class Homepage extends Base {
     @FindBy(xpath = "//div[text()='Midtrans Pillow']/following-sibling::a[text()='BUY NOW']")
     private WebElement BuyNowBtn;
 
+    @FindBy(xpath = "//div[@class='trans-status trans-success']")
+    private WebElement TransactionSuccessMsg;
+
+
     //Below are the methods to return WebElements
 
     public WebElement getBuyNowBtn(){
         return BuyNowBtn;
     }
+    public WebElement getTransactionSuccessMsg(){
+        return TransactionSuccessMsg;
+    }
+
 
 }

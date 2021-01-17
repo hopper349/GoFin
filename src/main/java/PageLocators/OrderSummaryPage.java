@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import javax.naming.Name;
+
 public class OrderSummaryPage extends Base {
 
     WebDriver driver;
@@ -24,5 +26,48 @@ public class OrderSummaryPage extends Base {
 
     @FindBy(xpath = "//span[text()='shipping details']/..")
     private WebElement ShippingDetailsTab;
+
+    @FindBy(xpath = "//div[text()='Name']/following-sibling::div")
+    private WebElement NameField;
+
+    @FindBy(xpath = "//td[text()='Email']/following-sibling::div")
+    private WebElement EmailField;
+
+    @FindBy(xpath = "//td[text()='Phone number']/following-sibling::div")
+    private WebElement PhoneNoField;
+
+    @FindBy(xpath = "//td[text()='Address']/following-sibling::div")
+    private WebElement AddressField;
+
+    @FindBy(xpath = "//span[text()='Continue']/../..")
+    private WebElement ContinueBtn;
+
+    //Below are the methods to return WebElements
+
+    public WebElement getOrderSummaryText(){
+        return OrderSummaryText;
+    }
+    public WebElement getAmountField(){
+        return AmountField;
+    }
+    public WebElement getShippingDetailsTab(){
+        return ShippingDetailsTab;
+    }
+    public WebElement getNameField(){
+        return NameField;
+    }
+    public WebElement getEmailField(){
+        return EmailField;
+    }
+    public WebElement getPhoneNoField(){
+        return PhoneNoField;
+    }
+    public WebElement getAddressField(){
+        return AddressField;
+    }
+    public WebElement getContinueBtn(){
+        return ContinueBtn;
+    }
+
 
 }

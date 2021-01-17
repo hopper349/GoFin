@@ -46,7 +46,6 @@ public class ShoppingCart extends Base {
     public WebElement getAmountField(){
         return AmountField;
     }
-
     public WebElement getNameField(){
         return NameField;
     }
