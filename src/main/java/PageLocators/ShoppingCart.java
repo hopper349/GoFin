@@ -1,14 +1,12 @@
 package PageLocators;
 
-import Base.Base;
+import Base.TestBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import javax.naming.Name;
-
-public class ShoppingCart extends Base {
+public class ShoppingCart extends TestBase {
     WebDriver driver;
 
 
@@ -16,6 +14,8 @@ public class ShoppingCart extends Base {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+    @FindBy(xpath = "//span[contains(text(),'Shopping Cart')]")
+    private WebElement ShoppingCartHeader;
 
     @FindBy(xpath = "//td[text()='Midtrans Pillow']/following-sibling::td[2]")
     private WebElement AmountField;
@@ -42,7 +42,9 @@ public class ShoppingCart extends Base {
     private WebElement CheckoutBtn;
 
     //Below are the methods to return WebElements
-
+    public WebElement getShoppingCartHeader(){
+        return ShoppingCartHeader;
+    }
     public WebElement getAmountField(){
         return AmountField;
     }

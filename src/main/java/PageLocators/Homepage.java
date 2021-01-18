@@ -1,12 +1,12 @@
 package PageLocators;
 
-import Base.Base;
+import Base.TestBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Homepage extends Base {
+public class Homepage extends TestBase {
 
     WebDriver driver;
 
@@ -26,6 +26,7 @@ public class Homepage extends Base {
     //Below are the methods to return WebElements
 
     public WebElement getBuyNowBtn(){
+        Log.info("Searching for Buy Now Button");
         return BuyNowBtn;
     }
     public WebElement getTransactionSuccessMsg(){

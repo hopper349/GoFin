@@ -1,12 +1,12 @@
 package PageLocators;
 
-import Base.Base;
+import Base.TestBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SelectPaymentPage extends Base {
+public class SelectPaymentPage extends TestBase {
     WebDriver driver;
 
 

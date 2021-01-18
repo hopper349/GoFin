@@ -1,12 +1,12 @@
 package PageLocators;
 
-import Base.Base;
+import Base.TestBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class TransactionPage extends Base {
+public class TransactionPage extends TestBase {
     WebDriver driver;
 
 
@@ -16,18 +16,24 @@ public class TransactionPage extends Base {
     }
 
 
+    @FindBy(xpath = "//iframe[contains(@src,'https://api.sandbox.veritrans.co')]")
+    private WebElement Frame;
+
     @FindBy(xpath = "//h1[text()='Issuing Bank']")
     private WebElement IssuingBankHeader;
 
     @FindBy(xpath = "//input[@type='password']")
     private WebElement PasswordField;
 
-    @FindBy(xpath = "//input[@type='submit']")
+    @FindBy(xpath = "//button[@type='submit']")
     private WebElement OkBtn;
 
 
     //Below are the methods to return WebElements
 
+    public WebElement getFrame(){
+        return Frame;
+    }
     public WebElement getIssuingBankHeader(){
         return IssuingBankHeader;
     }

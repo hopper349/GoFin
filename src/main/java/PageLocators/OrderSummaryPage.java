@@ -1,14 +1,12 @@
 package PageLocators;
 
-import Base.Base;
+import Base.TestBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import javax.naming.Name;
-
-public class OrderSummaryPage extends Base {
+public class OrderSummaryPage extends TestBase {
 
     WebDriver driver;
 
@@ -42,8 +40,14 @@ public class OrderSummaryPage extends Base {
     @FindBy(xpath = "//span[text()='Continue']/../..")
     private WebElement ContinueBtn;
 
+    @FindBy(xpath = "//iframe[@id='snap-midtrans']")
+    private WebElement Frame;
+
     //Below are the methods to return WebElements
 
+    public WebElement getFrame(){
+        return Frame;
+    }
     public WebElement getOrderSummaryText(){
         return OrderSummaryText;
     }

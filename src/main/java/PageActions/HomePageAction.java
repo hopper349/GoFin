@@ -1,12 +1,11 @@
 package PageActions;
 
-import Base.Base;
+import Base.TestBase;
 import PageLocators.Homepage;
-import PageLocators.ShoppingCart;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class HomePageAction extends Base {
+public class HomePageAction extends TestBase {
 
     WebDriver driver;
     Homepage homepage;
@@ -17,17 +16,20 @@ public class HomePageAction extends Base {
     }
 
     public String getHomePageTitle(){
+        Log.info("Getting the title of the WebPage");
         String title = driver.getTitle();
         return title;
     }
 
-    public ShoppingCart clickOnBuyNow(){
+    public ShoppingCartAction clickOnBuyNow(){
+        Log.info("Clicking on Buy Now Button");
         homepage.getBuyNowBtn().click();
-        return new ShoppingCart(driver);
+        return new ShoppingCartAction(driver);
     }
 
-
-
+    public WebElement validatePaymentSuccessMessage(){
+        return homepage.getTransactionSuccessMsg();
+    }
 
 
 
