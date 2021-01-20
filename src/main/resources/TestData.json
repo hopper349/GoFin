@@ -1,0 +1,33 @@
+[
+  {
+    "testCaseName": "validateSuccessfulPurchase",
+    "testData": {
+      "name": "Dipanshu",
+      "email": "123@gmail.com",
+      "phone": "1122334455",
+      "city": "delhi",
+      "address": "chandni chowk",
+      "pin": "110001",
+      "card": "4811 1111 1111 1114",
+      "expiry": "12/24",
+      "cvv": "123",
+      "password": "112233"
+    }
+  },
+  {
+    "testCaseName":"validateUnSuccessfulPurchase",
+    "testData":
+    {
+      "name": "Dipanshu",
+      "email": "123@gmail.com",
+      "phone": "1122334455",
+      "city": "delhi",
+      "address": "chandni chowk",
+      "pin": "110001",
+      "card": "4911 1111 1111 1113",
+      "expiry": "02/22",
+      "cvv": "123",
+      "password": "112233"
+    }
+  }
+]

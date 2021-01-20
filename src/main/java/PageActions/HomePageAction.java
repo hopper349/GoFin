@@ -4,6 +4,7 @@ import Base.TestBase;
 import PageLocators.Homepage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 public class HomePageAction extends TestBase {
 
@@ -15,10 +16,11 @@ public class HomePageAction extends TestBase {
         homepage = new Homepage(driver);
     }
 
-    public String getHomePageTitle(){
-        Log.info("Getting the title of the WebPage");
+    public void validateHomePageTitle(){
+        Log.info("Getting the title of the HomePage");
         String title = driver.getTitle();
-        return title;
+        Log.info("Validating the title of the HomePage");
+        Assert.assertEquals(title,"Sample Store");
     }
 
     public ShoppingCartAction clickOnBuyNow(){

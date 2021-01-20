@@ -2,6 +2,8 @@ package PageActions;
 
 import Base.TestBase;
 import PageLocators.ShoppingCart;
+import Utilities.FileReaderManager;
+import Utilities.Json;
 import Utilities.TestUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,7 +13,6 @@ public class ShoppingCartAction extends TestBase {
     WebDriver driver;
     ShoppingCart shoppingCart;
     TestUtil testUtil;
-
     public ShoppingCartAction(WebDriver driver) {
         this.driver = driver;
         shoppingCart = new ShoppingCart(driver);
@@ -22,7 +23,13 @@ public class ShoppingCartAction extends TestBase {
         return shoppingCart.getShoppingCartHeader();
     }
 
-    public void enterCustomerDetails() throws InterruptedException {
+    public void enterCustomerDetails(String testCaseName) throws InterruptedException {
+        Json json= FileReaderManager.getInstance().getJsonDataReader().getJsonByName(testCaseName);
+
+        System.out.println(json.testData.name);
+        System.out.println(json.testData.address);
+        System.out.println(json.testData.phone);
+        System.out.println(json.testData.city);
 
 
         /*testUtil.sendKeysUsingJSExecutor(shoppingCart.getNameField());

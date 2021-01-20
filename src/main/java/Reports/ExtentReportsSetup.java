@@ -8,9 +8,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class ExtentReportsSetup extends TestBase {
 
-    public static ExtentReports extentReports;
-    public static ExtentSparkReporter extentSparkReporter;
-    public static ExtentTest extentTest;
+
 
     public static ExtentReports extentReportsSetUp(){
         extentSparkReporter = new ExtentSparkReporter(System.getProperty("user.dir")+"\\ExtentResults\\report.html");

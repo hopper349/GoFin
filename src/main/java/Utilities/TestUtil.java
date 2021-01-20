@@ -1,12 +1,16 @@
 package Utilities;
 
 import Base.TestBase;
+import com.sun.xml.internal.fastinfoset.tools.XML_SAX_StAX_FI;
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -19,6 +23,7 @@ public class TestUtil extends TestBase {
     public static WebDriver driver;
     WebDriverWait wait;
 
+    public static String testDataSheetPath =System.getProperty("user.dir")+"\\src\\main\\java\\TestData\\testdata.xlsx";
     public TestUtil(WebDriver driver){
         this.driver = driver;
         wait= new WebDriverWait(driver,30000);
@@ -65,4 +70,9 @@ public class TestUtil extends TestBase {
         return destination;
     }
 
-}
+    public void waitForFrameToLoadAndSwitchToIt(WebElement frame, int timeout)
+    {
+        new WebDriverWait(driver, timeout).
+                until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frame));
+    }
+ }

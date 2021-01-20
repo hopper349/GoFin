@@ -1,6 +1,9 @@
 package Base;
 
 import Utilities.TestUtil;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.sun.xml.internal.ws.resources.UtilMessages;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
@@ -24,6 +27,9 @@ public class TestBase {
     Properties properties;
     static WebDriverWait explicitWait;
     public static Logger Log;
+    public static ExtentReports extentReports;
+    public static ExtentSparkReporter extentSparkReporter;
+    public static ExtentTest extentTest;
 
     public TestBase(){
 
@@ -58,6 +64,8 @@ public class TestBase {
                 driver = new FirefoxDriver();
                 System.out.println("launching FF");
                 break;
+            default:
+                throw new RuntimeException("Browser Not Supported. Please update the browser in the Config.Properties file");
         }
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();

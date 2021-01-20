@@ -38,24 +38,33 @@ public class CreditDebitCardPage extends TestBase {
     //Below are the methods to return WebElements
 
     public WebElement getCreditDebitCardText(){
+        Log.info("Searching for Credit/Debit Card Text Message");
         return CreditDebitCardText;
     }
     public WebElement getCardNumberField(){
+        Log.info("Searching for Card Number Field");
         return CardNumberField;
     }
     public WebElement getExpiryDateField(){
+        Log.info("Searching for Expiry Date Field");
         return ExpiryDateField;
     }
     public WebElement getCVVField(){
+        Log.info("Searching for CVV Field");
         return CVVField;
     }
-    public WebElement getEmailField(){
+    public WebElement getEmailField()
+    {
+        Log.info("Searching for Email Field");
         return EmailField;
     }
     public WebElement getPhoneNumberField(){
+        Log.info("Searching for Phone Number Field");
         return PhoneNumberField;
     }
-    public WebElement getPayNowBtn(){
+    public WebElement getPayNowBtn()
+    {
+        Log.info("Searching for Pay Now Button");
         return PayNowBtn;
     }
 }

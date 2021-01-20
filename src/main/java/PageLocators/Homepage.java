@@ -30,6 +30,7 @@ public class Homepage extends TestBase {
         return BuyNowBtn;
     }
     public WebElement getTransactionSuccessMsg(){
+        Log.info("Searching for Transaction Success Message");
         return TransactionSuccessMsg;
     }
 
